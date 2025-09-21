@@ -10,7 +10,7 @@
     "babel-preset-gatsby": "^1.4.0",
     "gatsby": "^3.4.1",
     "gatsby-image": "^3.4.0",
-    "gatsby-plugin-alias-imports": "^1.0.6",
+    "gatsby-plugin-alias-imports": "^2.0.0",
     "gatsby-plugin-google-analytics": "^3.4.0",
     "gatsby-plugin-manifest": "^3.4.0",
     "gatsby-plugin-netlify": "^3.4.0",
