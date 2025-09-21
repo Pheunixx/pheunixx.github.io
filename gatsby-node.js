@@ -66,6 +66,33 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   });
 };
 
+// This is the new function that fixes your GraphQL errors
+exports.createSchemaCustomization = ({ actions }) => {
+  const { createTypes } = actions;
+
+  // Define the schema for your Markdown frontmatter
+  // This prevents build failures if a field is missing from a post
+  const typeDefs = `
+    type MarkdownRemarkFrontmatter implements Node {
+      # This is the fix for the "cover" field error. It tells Gatsby to
+      # treat 'cover' as a file path so you can query image subfields.
+      cover: File @fileByRelativePath
+      
+      # The fields below were causing "Cannot query field..." errors.
+      # By defining them here as Strings, the queries will no longer fail.
+      company: String
+      external: String
+      ios: String
+      android: String
+      cta: String
+      location: String
+      range: String
+      url: String
+    }
+  `;
+  createTypes(typeDefs);
+};
+
 // https://www.gatsbyjs.org/docs/node-apis/#onCreateWebpackConfig
 exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
   // https://www.gatsbyjs.org/docs/debugging-html-builds/#fixing-third-party-modules
