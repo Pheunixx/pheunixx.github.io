@@ -65,18 +65,14 @@ const Hero = () => {
   const four = (
     <>
       <p>
-       I’m an electronic and computer engineering student passionate about building
-  sleek, functional mobile apps with Flutter. I love turning ideas into real
-  products and I’m constantly leveling up my skills along the way
+        I’m an electronic and computer engineering student passionate about building sleek,
+        functional mobile apps with Flutter. I love turning ideas into real products and I’m
+        constantly leveling up my skills along the way
       </p>
     </>
   );
   const five = (
-    <a
-      className="email-link"
-      href="mailto:juliet.jnnaemezie80@gmail.com"
-      target="_blank"
-      rel="noreferrer">
+    <a className="email-link" href="mailto:jnnaemezie80@gmail.com" target="_blank" rel="noreferrer">
       Get in touch!
     </a>
   );
